@@ -5,7 +5,7 @@ from django.urls import reverse
 class FoodCategory(models.Model):
     name = models.CharField(max_length=200, default='')
     slug = models.SlugField(max_length=200)
-    image = models.ImageField(upload_to='menu_images/',
+    image = models.ImageField(upload_to='menu_images/%Y/%m/%d',
                               blank=True)
 
     class Meta:
@@ -41,6 +41,6 @@ class Food(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     def get_absolute_url(self):
         return reverse('food_details', kwargs={'id': self.id, 'slug': self.slug})
