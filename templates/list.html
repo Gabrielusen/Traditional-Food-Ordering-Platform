@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    {% if foodcategory %}{{ foodcategory.name }}{% else %}Foods{% endif %}
+{% endblock %}
+
+{% block content %}
+    <div id="sidebar">
+        <h3>FoodCategories</h3>
+        <ul>
+            <li {% if not foodcategory %}class="selected"{% endif %}>
+                <a href="{% url "food:food_list" %}">All</a>
+            </li>
+            {% for  %}
+        </ul>
+    </div>
+{% endblock %}

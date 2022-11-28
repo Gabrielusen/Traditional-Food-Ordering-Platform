@@ -11,7 +11,7 @@ def food_list(request, food_category_slug=None):
         food_category = get_object_or_404(FoodCategory, slug=food_category_slug)
         foods = foods.filter(food_category=food_category)
     return render(request,
-                  'index.html',
+                  'list.html',
                   {'food_category': food_category,
                    'food_categories': food_categories,
                    'foods': foods})
